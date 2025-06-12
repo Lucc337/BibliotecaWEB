@@ -7,7 +7,6 @@ exports.getRegister = (req, res) => {
   res.render('register');
 };
 
-
 exports.postRegister = async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -23,7 +22,7 @@ exports.postRegister = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 8);
 
-    db.query('INSERT INTO users SET ?', { name, email, password: hashedPassword }, (err, result) => {
+    db.query('INSERT INTO users SET ?', { name, email, password: hashedPassword }, (err) => {
       if (err) throw err;
       res.redirect('/login');
     });
@@ -34,7 +33,6 @@ exports.postRegister = async (req, res) => {
 exports.getLogin = (req, res) => {
   res.render('login');
 };
-
 
 exports.postLogin = (req, res) => {
   const { email, password } = req.body;
@@ -53,12 +51,11 @@ exports.postLogin = (req, res) => {
       expiresIn: '1h'
     });
 
-    res.cookie('token', token);
+    res.cookie('token', token, { httpOnly: true });
     res.redirect('/books');
   });
 };
 
-// Logout
 exports.logout = (req, res) => {
   res.clearCookie('token');
   res.redirect('/login');
