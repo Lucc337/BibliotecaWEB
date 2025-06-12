@@ -34,16 +34,16 @@ Desenvolver uma aplicação web intuitiva e acessível para facilitar o dia a di
 
 ## 💡 Como rodar o projeto localmente
 
-# 1. Clone este repositório
+1. Clone este repositório
 git clone https://github.com/SEU-USUARIO/seu-repositorio.git
 
-# 2. Acesse a pasta do projeto
+2. Acesse a pasta do projeto
 cd nome-do-projeto
 
-# 3. Instale as dependências
+3. Instale as dependências
 npm install
 
-# 4. Inicie o servidor
+4. Inicie o servidor
 npm start
 
 ## 📄 Licença
@@ -88,4 +88,3 @@ Este projeto é acadêmico e de código aberto. Fique à vontade para estudar e 
 </table>
 
 </div>
----
