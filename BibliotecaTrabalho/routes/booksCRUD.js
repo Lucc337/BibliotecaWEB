@@ -3,7 +3,6 @@ const router = express.Router();
 const verifyToken = require('../middleware/authMiddleware');
 const bookController = require('../controllers/bookController');
 
-
 router.get('/', verifyToken, bookController.listBooks);
 router.get('/create', verifyToken, bookController.getCreateBook);
 router.post('/create', verifyToken, bookController.postCreateBook);
