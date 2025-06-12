@@ -18,6 +18,7 @@ CREATE TABLE books (
   isbn VARCHAR(20),
   quantity INT,
   category VARCHAR(100),
+  description TEXT,
   user_id INT,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
