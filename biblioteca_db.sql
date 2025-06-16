@@ -1,4 +1,4 @@
-CREATE DATABASE biblioteca;
+-- CREATE DATABASE biblioteca;
 
 USE biblioteca;
 

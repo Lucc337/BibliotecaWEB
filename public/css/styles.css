@@ -1,0 +1,51 @@
+body {
+    background-color: #fff;
+    background-image: url('/img/livros.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 300px;
+    min-height: 100vh;
+}
+
+.top-bar {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 0;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.container-box {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+label {
+    font-weight: 500;
+}
+
+button,
+.btn {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: none;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+}
