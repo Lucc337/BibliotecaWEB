@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
+const db = require('../models/db');
 
-const verifyToken = (req, res, next) => {
+module.exports = (req, res, next) => {
   const token = req.cookies.token;
 
   if (!token) {
@@ -9,12 +10,19 @@ const verifyToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = { id: decoded.id };
-    next();
-  } catch (err) {
-    res.clearCookie('token');
+    const userId = decoded.id;
+
+    db.query('SELECT * FROM users WHERE id = ?', [userId], (err, results) => {
+      if (err) throw err;
+
+      if (results.length === 0) {
+        return res.redirect('/login');
+      }
+
+      req.user = results[0];
+      next();
+    });
+  } catch (error) {
     return res.redirect('/login');
   }
 };
-
-module.exports = verifyToken;

@@ -1,11 +1,19 @@
-body {
+/* Fundo só para login e register */
+.auth-background {
     background-color: #fff;
-    background-image: url('/img/livros.png');
+    background-image: url('public/img/livro.png');
     background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 250px;
+    background-position: bottom;
+    background-size: 300px;
     min-height: 100vh;
 }
+
+/* Demais telas */
+.body-default {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
 
 .top-bar {
     background-color: #000;
@@ -35,13 +43,23 @@ h2 {
 
 button,
 .btn {
-    background-color: #000;
-    color: #fff;
+    background-color: #000 !important;
+    color: #fff !important;
     border: none;
 }
 
 button:hover,
 .btn:hover {
-    background-color: #333;
-    color: #fff;
+    background-color: #333 !important;
+    color: #000 !important;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
