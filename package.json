@@ -1,0 +1,30 @@
+{
+  "name": "bibliotecaweb",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao repositório oficial do nosso sistema de gerenciamento de biblioteca!  \r Este projeto foi desenvolvido como parte da disciplina de **Programação Web (2025)** com o objetivo de oferecer uma solução prática e eficiente para bibliotecários(as) que desejam modernizar o controle do acervo.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucc337/BibliotecaWEB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucc337/BibliotecaWEB/issues"
+  },
+  "homepage": "https://github.com/Lucc337/BibliotecaWEB#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1"
+  }
+}

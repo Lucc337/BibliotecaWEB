@@ -14,7 +14,7 @@ exports.listBooks = (req, res) => {
   });
 };
 
-// Tela de criação
+// Tela de criação dos livros
 exports.getCreateBook = (req, res) => {
   res.render('editBook', {
     title: 'Cadastrar',
@@ -42,7 +42,7 @@ exports.postCreateBook = (req, res) => {
     quantity: parseInt(quantity),
     category,
     description,
-    cover, // aqui salva o link da imagem
+    cover,
     user_id: userId
   };
 
@@ -91,7 +91,7 @@ exports.getEditBook = (req, res) => {
 exports.postEditBook = (req, res) => {
   const id = req.params.id;
   const userId = req.user.id;
-  const { title, author, publisher, year, isbn, quantity, category, description } = req.body;
+  const { title, author, publisher, year, isbn, quantity, category, cover, description } = req.body;
 
   const bookData = {
     title,
@@ -101,12 +101,32 @@ exports.postEditBook = (req, res) => {
     isbn,
     quantity: parseInt(quantity),
     category,
+    cover,
     description
   };
 
   db.query('UPDATE books SET ? WHERE id = ? AND user_id = ?', [bookData, id, userId], (err) => {
     if (err) throw err;
     res.redirect('/books');
+  });
+};
+
+// Buscar livros
+exports.searchBooks = (req, res) => {
+  const userId = req.user.id;
+  const searchQuery = req.query.q;
+
+  const sql = `
+    SELECT * FROM books 
+    WHERE user_id = ? 
+    AND (title LIKE ? OR author LIKE ? OR category LIKE ?)
+  `;
+
+  const queryParam = `%${searchQuery}%`;
+
+  db.query(sql, [userId, queryParam, queryParam, queryParam], (err, results) => {
+    if (err) throw err;
+    res.render('books', { books: results, userName: req.user.name });
   });
 };
 

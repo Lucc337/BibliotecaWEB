@@ -1,20 +1,20 @@
-/* Fundo só para login e register */
+/* Tela de login e registro */
 .auth-background {
     background-color: #fff;
-    background-image: url('public/img/livro.png');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 300px;
+    background-image: url('/img/livros.webp');
+    background-repeat: repeat;
+    background-position: 75%;
+    background-size: 550px;
     min-height: 100vh;
 }
 
-/* Demais telas */
+/* Outras telas */
 .body-default {
     background-color: #fff;
     min-height: 100vh;
 }
 
-
+/* Barra superior */
 .top-bar {
     background-color: #000;
     color: #fff;
@@ -25,25 +25,39 @@
     font-weight: bold;
 }
 
+/* Caixa de login, cadastro, etc */
 .container-box {
     max-width: 450px;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 30px;
     margin: 50px auto;
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
+.container-box a.btn {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+/* Títulos */
 h2 {
     text-align: center;
     margin-bottom: 20px;
     font-weight: 600;
     color: #000;
 }
-
+h5 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #000;
+}
+/* Botões */
 button,
 .btn {
-    background-color: #000 !important;
+    background-color: #000 !important; /*o important obriga o bootstrap priorizar o css*/
     color: #fff !important;
     border: none;
 }
@@ -51,15 +65,105 @@ button,
 button:hover,
 .btn:hover {
     background-color: #333 !important;
-    color: #000 !important;
+    color: #fff !important;
 }
 
-
+/* Cartões dos livros */
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    border-radius: 10px;
+    border: none;
 }
 
 .card:hover {
     transform: scale(1.02);
+}
+
+.card-title {
+    min-height: 50px;
+    max-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    overflow: visible;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Imagem da galeria */
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* Imagem da página de detalhes */
+.book-cover {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain; /*contain: não permite que as imagens fiquem distorcidas*/
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+/* Itens da lista de detalhes */
+.list-group-item {
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+/* Input de pesquisa */
+input[type="search"] {
+    border: 1px solid #ccc;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+/* Página de livro não encontrado */
+.message-box {
+    background-color: white;
+    padding: 30px;
+    max-width: 500px;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.message-box h2 {
+    margin-bottom: 20px;
+}
+
+.message-box a {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.message-box a:hover {
+    background-color: #333;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 200px;
+    }
+    .book-cover {
+        max-height: 300px;
+    }
 }
