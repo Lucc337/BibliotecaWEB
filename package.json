@@ -4,6 +4,7 @@
   "description": "Bem-vindo ao repositório oficial do nosso sistema de gerenciamento de biblioteca!  \r Este projeto foi desenvolvido como parte da disciplina de **Programação Web (2025)** com o objetivo de oferecer uma solução prática e eficiente para bibliotecários(as) que desejam modernizar o controle do acervo.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
